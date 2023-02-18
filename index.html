@@ -61,6 +61,9 @@
 						<div class="col-6 col-12-medium imp-medium">
 							<span onClick="window.open('https://arbswap.io/swap?outputCurrency=0x24076715552AC1bc3dE4f7cB10d1B03f77A30c85')"><span class="image fit" ><img width="" height=""  src="images/IMG_1865-removebg-preview.png" alt="" /></span></a>
 						</div>
+						<div class="col-6 col-12-medium imp-medium">
+							<span onClick="addNetwork()"><span class="image fit" >Add Arbitrum Nova Network to Metamask</span></a>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -100,6 +103,26 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+<script>
+	function addNetwork() {
+window.ethereum.request({
+method: 'wallet_addEthereumChain',
+params: [{
+chainId: '0x38',
+chainName: 'Binance Smart Chain',
+nativeCurrency: {
+    name: 'Binance Coin',
+    symbol: 'BNB',
+    decimals: 18
+},
+rpcUrls: ['https://bsc-dataseed.binance.org/'],
+blockExplorerUrls: ['https://bscscan.com']
+}]
+})
+.catch((error) => {
+console.log(error)
+}) }
+</script>
 
 	</body>
 </html>
