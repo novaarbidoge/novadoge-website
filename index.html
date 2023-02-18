@@ -107,15 +107,15 @@
 window.ethereum.request({
 method: 'wallet_addEthereumChain',
 params: [{
-chainId: '0x38',
-chainName: 'Binance Smart Chain',
+chainId: '42170',
+chainName: 'Arbitrum Nova',
 nativeCurrency: {
-    name: 'Binance Coin',
-    symbol: 'BNB',
+    name: 'Ether',
+    symbol: 'ETH',
     decimals: 18
 },
-rpcUrls: ['https://bsc-dataseed.binance.org/'],
-blockExplorerUrls: ['https://bscscan.com']
+rpcUrls: ['nova.arbitrum.io/rpc/'],
+blockExplorerUrls: ['nova-explorer.arbitrum.io']
 }]
 })
 .catch((error) => {
