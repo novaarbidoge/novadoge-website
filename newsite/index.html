@@ -22,12 +22,6 @@ var UNISWAP_ROUTER_CONTRACT = new ethers.Contract(UNISWAP_ROUTER_ADDRESS, UNISWA
 console.log(s)  
 
 
-const DAI = new Token(
-    UNISWAP.ChainId.RINKEBY,
-    "0x5592EC0cfb4dbc12D3aB100b257153436a1f0FEa",
-    18
-);
-
 try {
     const pair = await Fetcher.fetchPairData(token1, token2, provider); //creating instances of a pair
     const route = await new Route([pair], token2); // a fully specified path from input token to output token
@@ -79,7 +73,19 @@ try {
 }
 }
 
-swapTokens(DAI, WETH[DAI.chainId], 0.02)
+const DAI = new Token(
+    UNISWAP.ChainId.MAINNET,
+    "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    18
+);
+
+const WETH = new Token(
+    UNISWAP.ChainId.MAINNET,
+    "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    18
+);
+
+swapTokens(DAI, WETH, 0.02)
 
 </script>
   </body>
