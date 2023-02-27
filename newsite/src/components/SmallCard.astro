@@ -1,0 +1,22 @@
+---
+export interface Props {
+	title: string;
+}
+
+const {title} = Astro.props;
+---
+<article class="smallcard">
+    <h2>{title}</h2>
+    <slot />
+</article>
+
+<style>
+    .smallcard {
+        background-color: var(--bg1);
+        padding: 1.5em;
+        padding-top: 0;
+        border-radius: 0.5em;
+        width: 15em;
+        margin: 0.5em;
+    }
+</style>

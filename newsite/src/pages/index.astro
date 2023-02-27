@@ -1,0 +1,60 @@
+---
+import BigCard from '../components/BigCard.astro';
+import CardGrid from '../components/CardGrid.astro';
+import SmallCard from '../components/SmallCard.astro';
+import Layout from '../layouts/Layout.astro';
+import logo from '../media/logo.png';
+---
+
+<Layout title="Home">
+	<main>
+		<img src={logo} alt="Novadoge logo" class="logo" />
+		<BigCard>
+			<span slot="title">What is <span class="primary-color">Novadoge</span>?</span>
+			<div slot="body">
+				<p>
+					It is a safe and decentralized community meme token.
+					The Novadoge token is a simple buy, sell and transfer contract, with NO TAXES, just like the original Dogecoin.
+					The initial liquidity was provided by an anonymous team of Orange Doges and
+					the LP tokens were PERMANENTLY BURNED, ensuring that Novadoge can NEVER rug and will be tradeable on Arbswap FOREVER!
+				</p>
+				<span>Contract address: 0x24076715552AC1bc3dE4f7cB10d1B03f77A30c85</span>
+			</div>
+		</BigCard>
+		<CardGrid>
+			<SmallCard title="how do I buy this coin?">
+
+			</SmallCard>
+			<SmallCard title="what is arbitrum nova?">
+				
+			</SmallCard>
+			<SmallCard title="memes">
+				
+			</SmallCard>
+			<SmallCard title="socials">
+				
+			</SmallCard>
+		</CardGrid>
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		align-content: center;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: space-around;
+	}
+	span.primary-color {
+		color: var(--primary);
+	}
+	img.logo {
+		border-radius: 50%;
+		width: 10em;
+		height: 10em;
+		margin: 1.5em;
+	}
+</style>

@@ -1,0 +1,39 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Novadoge | {title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary: #ef8220; /* główny kolor */
+		--bg0: #713700; /* tło strony */
+		--bg1: #944a00; /* tło kart */
+		--fg0: #ffb783; /* kolor tekstu */
+		--fg1: #ffede4; /* kolor wyróżnionego tekstu */
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: var(--bg0);
+		color: var(--fg0);
+	}
+	body {
+		margin: 0;
+		padding: 2em;
+	}
+</style>
