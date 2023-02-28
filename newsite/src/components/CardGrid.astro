@@ -1,10 +1,46 @@
-<section class="cardgrid">
-    <slot />
-</section>
+<div class="grid-wrapper">
+    <section class="cardgrid">
+        <slot />
+    </section>
+</div>
 
 <style>
+    .grid-wrapper {
+        overflow: hidden;
+        mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+        -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+    }
     .cardgrid {
+        --x: 0px;
         display: flex;
         flex-direction: row;
+        overflow-x: hidden;
+        max-width: 100%;
+        scroll-behavior: smooth;
+        transition: transform 0.25s linear;
+        transform: translateX(var(--x));
     }
 </style>
+
+<script>
+    /* Poniższy kod generuje efekt paralaksy */ 
+    let elem = document.querySelector(".cardgrid");
+    let pos = 0;
+    let touch = window.innerWidth/2;
+
+    function setPos(delta) {
+        pos += delta*1.2;
+        
+        /* Ograniczenie ruchu */
+        let range = elem.clientWidth * 0.75 // gwarantuje, że coś będzie zawsze widoczne
+        pos = Math.max(-range, Math.min(range, pos));
+
+        elem.style.setProperty("--x", `${pos}px`);
+    }
+
+    window.addEventListener("mousemove", evt => {
+        setPos(-evt.movementX)       
+    })
+    window.addEventListener("resize", evt => setPos(0))
+    window.addEventListener("mouseleave", evt => setPos(0))
+</script>

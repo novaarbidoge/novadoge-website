@@ -10,7 +10,7 @@ import logo from '../media/logo.png';
 	<main>
 		<img src={logo} alt="Novadoge logo" class="logo" />
 		<BigCard>
-			<span slot="title">What is <span class="primary-color">Novadoge</span>?</span>
+			<span slot="title">What is <span class="primary-col">Novadoge</span>?</span>
 			<div slot="body">
 				<p>
 					It is a safe and decentralized community meme token.
@@ -22,18 +22,11 @@ import logo from '../media/logo.png';
 			</div>
 		</BigCard>
 		<CardGrid>
-			<SmallCard title="how do I buy this coin?">
-
-			</SmallCard>
-			<SmallCard title="what is arbitrum nova?">
-				
-			</SmallCard>
-			<SmallCard title="memes">
-				
-			</SmallCard>
-			<SmallCard title="socials">
-				
-			</SmallCard>
+			<SmallCard title="how do I buy this coin?" href="/" />
+			<SmallCard title="what is arbitrum nova?" href="#!" />
+			<SmallCard title="memes" href="#!" />
+			<SmallCard title="socials" href="#!" />
+			<SmallCard title="chart" href="#!" />
 		</CardGrid>
 	</main>
 </Layout>
@@ -48,7 +41,7 @@ import logo from '../media/logo.png';
 		align-items: center;
 		justify-content: space-around;
 	}
-	span.primary-color {
+	span.primary-col {
 		color: var(--primary);
 	}
 	img.logo {
