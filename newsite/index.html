@@ -39,6 +39,7 @@
 		var buy_up = eth_bought_for_20_usd => arbnova_ArbswapRouter.methods.swapExactETHForTokens('0', [arbnova_WETH, novadoge], window.ethereum.selectedAddress,'10005644647995').send({from: window.ethereum.selectedAddress, value:eth_bought_for_20_usd})
 
 		switch_to_arbnova().then(r => {get_20_dollars().then(buy_up)})		
+	}
     </script>
   </body>
 </html>
