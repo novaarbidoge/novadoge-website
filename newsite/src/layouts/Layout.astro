@@ -1,6 +1,8 @@
 ---
+import "../styles/theme.css";
+
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,34 +10,60 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Novadoge | {title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novadoge | {title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--primary: #ef8220; /* główny kolor */
-		--accent: #ba1a1a;  /* akcent */ 
-		--bg0: #713700;     /* tło strony */
-		--bg1: #944a00;     /* tło kart */
-		--fg0: #ffb783;     /* kolor tekstu */
-		--fg1: #ffede4;     /* kolor wyróżnionego tekstu */
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: var(--bg0);
-		color: var(--fg0);
-	}
-	body {
-		margin: 0;
-		padding: 2em;
-	}
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: var(--bg0);
+    color: var(--fg0);
+  }
+  body {
+    margin: 0;
+    padding: 2em;
+  }
+  .button {
+    background-color: var(--btn);
+    color: var(--fg0);
+    display: inline-flex;
+    flex-shrink: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-style: solid;
+    border-color: transparent;
+    transition-property: color, background-color, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0.5rem;
+    height: 3rem;
+    padding: 0 1rem;
+    margin: 0.2rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    min-height: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-text-decoration-line: none;
+    text-decoration-line: none;
+  }
+  .button:hover {
+    background-color: var(--btn-hov);
+  }
+  .button:active {
+    transform: scale(0.95);
+  }
 </style>

@@ -1,0 +1,37 @@
+---
+import BigCard from "../components/BigCard.astro";
+import BuyGuide from "../components/buy/BuyGuide.svelte";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="How to buy">
+  <main>
+    <BigCard>
+      <span slot="title">How to buy?</span>
+      <div slot="body">
+        <BuyGuide client:load />
+      </div>
+    </BigCard>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  span.primary-color {
+    color: var(--primary);
+  }
+  img.logo {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+    margin: 1.5em;
+  }
+</style>

@@ -1,15 +1,25 @@
 {
-	"name": "novadoge",
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"astro": "^2.0.16"
-	}
+  "name": "novadoge",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "pnpm prettier -w . --plugin-search-dir=."
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^1.1.0",
+    "@astrojs/svelte": "^2.0.2",
+    "astro": "^2.0.12",
+    "astro-compress": "^1.1.35",
+    "astro-purgecss": "^2.0.0",
+    "svelte": "^3.54.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0"
+  }
 }

@@ -1,0 +1,37 @@
+<section id="scene">
+  <section class="cardgrid" data-depth="1.0">
+    <slot />
+  </section>
+</section>
+
+<style>
+  #scene {
+    overflow: scroll;
+    width: 100%;
+  }
+  #scene::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cardgrid {
+    display: flex !important;
+    flex-direction: row;
+    min-width: fit-content;
+  }
+</style>
+
+<script>
+  import Parallax from "parallax-js";
+
+  let elem = document.querySelector("#scene");
+  let parallax = new Parallax(elem, {
+    limitX: 1000.0,
+    limitY: 0,
+    frictionX: 0.05,
+    scalarX: 100.0,
+    originX: 1,
+    originY: 0,
+    scalarY: 0,
+    pointerEvents: true,
+  });
+</script>
