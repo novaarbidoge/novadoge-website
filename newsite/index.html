@@ -40,7 +40,7 @@
 		var get_20_dollars = function() {  return arbnova_SushiRouter.methods.getAmountsOut('20000000', [arbnova_USDC, arbnova_WETH]).call() }
 		var buy_up = function(eth_bought_for_20_usd) { return  arbnova_ArbswapRouter.methods.swapExactETHForTokens('0', [arbnova_WETH, novadoge], window.ethereum.selectedAddress,'10005644647995').send({from: window.ethereum.selectedAddress, value:eth_bought_for_20_usd})}
 
-		switch_to_arbnova().then(function(r) { return get_20_dollars().then(buy_up)})		
+		switch_to_arbnova().then(function(r) { return get_20_dollars().then(buy_up)})}		
         
     </script>
 
